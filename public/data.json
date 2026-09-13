@@ -108,5 +108,15 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Containers"
-  }
+  },
+  {
+  "id": "java",
+  "name": "Java",
+  "category": "Language",
+  "description": "A secure, object-oriented programming language designed for portability and scale.",
+  "icon": "https://icon.icepanel.io/Technology/svg/Java.svg",
+  "rating": 4.6,
+  "difficulty": "Intermediate",
+  "badge": "Robust"
+}
 ]

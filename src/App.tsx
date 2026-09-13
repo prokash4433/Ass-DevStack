@@ -1,31 +1,49 @@
 import { Suspense } from "react";
-import Banner from "./Components/Banner"
-import Navbar from "./Components/Navbar"
+import Navbar from "./Components/Navbar";
+ 
 import Cards from "./Components/ProgrammingCards/Cards";
 import type { Icards } from "./types/cardsTypes";
-
-const cardsFetch = async (): Promise<Icards[]> => {
-  const res = await fetch('/data.json')
-  const data =await res.json();
-  return data;
- }
+import { ToastContainer } from "react-toastify";
+ 
+ 
+import Banner from "./Components/Banner";
+import Footer from "./Components/Footer";
+ 
+ 
  
 
-function App() {
-  const cardsPromise = cardsFetch();
-  
+const cardsFetch = async (): Promise<Icards[]> => {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}data.json`);
 
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status}`);
+    }
+
+    return await res.json();
+  } catch (error) {
+      
+    return []; 
+  }
+};
+
+
+const cardsPromise = cardsFetch();
+
+function App() {
   return (
     <>
-        <Navbar />
-        <Banner />
-        <Suspense fallback={<h2>Loading...</h2>} >
-        <Cards cardsPromise={cardsPromise} />
+      <Navbar />
+      <Banner />
+       
+      <ToastContainer />
 
-        </Suspense>
-        
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Cards cardsPromise={cardsPromise} />
+      </Suspense>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

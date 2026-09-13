@@ -5,7 +5,7 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <div className="border-b border-gray-100">
+        <div className="border-b border-gray-100 sticky top-0 z-50 bg-white">
 
             <nav className="py-3 sm:py-4 md:py-5 lg:py-4">
 
