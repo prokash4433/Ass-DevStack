@@ -12,7 +12,7 @@ const TechnologyCard = ({
           onAdd,
 }: TechnologyCardProps) => {
           return (
-                    <div className="rounded-xl border border-blue-200 bg-white p-4 shadow-sm transition hover:border-blue-400 hover:shadow-md">
+                    <div className="rounded-xl border   bg-white p-4 shadow-sm transition  hover:border-pink-400 hover:shadow-md">
 
                               <div className="flex items-start justify-between">
                                         <img
