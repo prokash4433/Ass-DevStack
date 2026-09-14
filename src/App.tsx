@@ -10,25 +10,14 @@ import Banner from "./Components/Banner";
 import Footer from "./Components/Footer";
  
  
+ const cardsPromise = async (): Promise<Icards[]>=>{
+  const res = await fetch("./data.json");
+  const data = await res.json();
+  return data;
+}
+
+
  
-
-const cardsFetch = async (): Promise<Icards[]> => {
-  try {
-    const res = await fetch("/data.json");
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status}`);
-    }
-
-    return await res.json();
-  } catch (error) {
-      
-    return []; 
-  }
-};
-
-
-const cardsPromise = cardsFetch();
 
 function App() {
   return (
@@ -39,7 +28,7 @@ function App() {
       <ToastContainer />
 
       <Suspense fallback={<h2>Loading...</h2>}>
-        <Cards cardsPromise={cardsPromise} />
+        <Cards cardsPromise={cardsPromise()} />
       </Suspense>
       <Footer />
     </>
