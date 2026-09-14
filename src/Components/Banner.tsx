@@ -9,7 +9,7 @@ const Banner = () => {
 
           <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h1 className="text-[27px] sm:text-[34px] md:text-[40px] lg:text-[50px] font-bold leading-[1.05] text-slate-900">Build Your Ideal<br />
-          <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"> Development Stack</span></h1>
+          <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"> Development Stack</span></h1>
 
           <p className="mt-4 sm:mt-5 md:mt-5 lg:mt-5 max-w-xl mx-auto lg:mx-0 text-[10px] sm:text-xs md:text-sm lg:text-base leading-4 sm:leading-5 md:leading-6 text-slate-500">Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.</p>
 
